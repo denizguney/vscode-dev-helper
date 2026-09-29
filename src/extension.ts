@@ -49,3 +49,30 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 export function deactivate() {}
+
+
+// 4. Metin Dönüştürme Komutu (Case Converter)
+    let convertCaseDisposable = vscode.commands.registerCommand('vscode-dev-helper.convertUppercase', () => {
+        const editor = vscode.window.activeTextEditor;
+
+        if (!editor) {
+            vscode.window.showInformationMessage('Aktif bir editör bulunamadı!');
+            return;
+        }
+
+        const selection = editor.selection;
+        const text = editor.document.getText(selection);
+
+        if (!text) {
+            vscode.window.showWarningMessage('Lütfen dönüştürmek için bir metin seçin!');
+            return;
+        }
+
+        const upperText = text.toUpperCase();
+
+        editor.edit(editBuilder => {
+            editBuilder.replace(selection, upperText);
+        });
+    });
+
+    context.subscriptions.push(convertCaseDisposable);
