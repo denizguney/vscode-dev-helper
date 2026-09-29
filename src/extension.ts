@@ -44,8 +44,8 @@ export function activate(context: vscode.ExtensionContext) {
         const selection = editor.selection;
         const text = editor.document.getText(selection);
 
-        // Eğer bir şey seçilmediyse imlecin olduğu kelimeyi veya boş log bırakabiliriz
-        const logContent = text ? `console.log('🚀 [Debug] ${text}:', ${text});` : `console.log('🚀 [Debug]:', );`;
+        
+        const logContent = text ? `console.log(' [Debug] ${text}:', ${text});` : `console.log(' [Debug]:', );`;
 
         editor.edit(editBuilder => {
             // Seçimin veya imlecin olduğu satırın sonuna log ekleyelim
