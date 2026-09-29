@@ -1,1 +1,34 @@
-
+{
+  "name": "vscode-dev-helper",
+  "displayName": "vscode-dev-helper",
+  "description": "A handy utility extension for VS Code written in TypeScript",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode-dev-helper.helloworld",
+        "title": "Hello World"
+      },
+      {
+        "command": "vscode-dev-helper.countChars",
+        "title": "Karakter Sayısını Göster"
+      },
+      {
+        "command": "vscode-dev-helper.insertDebugLog",
+        "title": "Debug Log Ekle"
+      },
+      {
+        "command": "vscode-dev-helper.convertUppercase",
+        "title": "Dev Helper: Metni Büyük Harfe Çevir (Uppercase)"
+      }
+    ]
+  }
+}
